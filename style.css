@@ -42,6 +42,9 @@ body h5,
 body h6 {
   font-family: "Zodiak", "Times New Roman", Times, serif;
 }
+body p {
+  line-height: 1.5rem;
+}
 body #home {
   height: 100%;
   background-attachment: local;
