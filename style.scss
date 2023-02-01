@@ -1,4 +1,4 @@
-@import "https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap";
+@import "https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@400&f[]=zodiak@700&display=swap";
 
 html,
 body {
@@ -9,7 +9,7 @@ body {
     $sg-dim: 25vw;
     $sg-margin: 10vw;
 
-    font-family: "Switzer", Arial, sans-serif;
+    font-family: "Jakarta Sans", Arial, sans-serif;
     margin: 0;
 
     h1,
@@ -18,13 +18,19 @@ body {
     h4,
     h5,
     h6 {
-        font-family: "Gambarino", "Times New Roman", Times, serif;
+        font-family: "Zodiak", "Times New Roman", Times, serif;
     }
 
     #home {
         height: 100%;
+        background-attachment: local;
         background-color: #b3d0e2;
-        background-image: url("assets/sf-skyline.jpg");
+        background-image: url("assets/sf-skyline.png"),
+            linear-gradient(
+                to bottom,
+                #b3d0e2 calc(100vh + 150px),
+                #fff calc(100vh + 150px)
+            );
         background-position: top -150px right;
         background-repeat: no-repeat;
         overflow: scroll;
@@ -42,20 +48,31 @@ body {
             }
         }
 
-        header,
+        main,
         footer {
-            background-image: linear-gradient(
-                to bottom,
-                transparent,
-                // #9db3bf,
-                #cfd9df,
-                #fff,
-                #cfd9df,
-                #9db3bf
-            );
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #7d9eb0;
+            }
         }
 
         header {
+            background-image: linear-gradient(
+                    to bottom,
+                    transparent,
+                    #cfd9df,
+                    #fff,
+                    #cfd9df,
+                    transparent
+                ),
+                url("assets/water.png");
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: 100%;
             justify-content: flex-end;
             position: relative;
 
@@ -133,7 +150,14 @@ body {
 
         footer {
             // align-items: flex-start;
-            background-color: rgb(100, 100, 100);
+            background-image: linear-gradient(
+                to bottom,
+                #9db3bf,
+                #cfd9df,
+                #fff,
+                #cfd9df,
+                #9db3bf
+            );
             position: relative;
             z-index: 2;
 
@@ -162,7 +186,9 @@ body {
         width: $sg-dim;
         background-image: url("assets/astkhik-levantian.jpg");
         background-size: cover;
+        border: 10px solid #fff;
         border-radius: 50%;
+        box-sizing: border-box;
         margin: 0 $sg-margin;
         position: fixed;
         // transition: 1s;

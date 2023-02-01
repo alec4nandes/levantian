@@ -29,6 +29,9 @@ function moveScrollGraphic(container) {
         percentScreenScrolled = (scrollTop / screenHeight) * 100,
         verticalCenter = `${(screenHeight - graphicHeight) / 2}px`;
 
+    // change border color
+    scrollGraphic.style.borderColor = getBorderRGB(scrollTop, screenHeight);
+
     if (screenWidth > 700) {
         const slowLeftWide = percentScreenScrolled / 1.5;
         scrollGraphic.style.left = `${
@@ -47,10 +50,20 @@ function moveScrollGraphic(container) {
         scrollGraphic.style.top = isPastHeader
             ? `${graphicMargin - (scrollTop - screenHeight) + navHeight}px`
             : verticalCenter;
-        console.log(isPastHeader);
     }
 
     displayNav(scrollTop, screenHeight);
+}
+
+function getBorderRGB(scrollTop, screenHeight) {
+    const percentScreenScrolled = scrollTop / screenHeight;
+    const [r, g, b] = [157, 179, 191].map((minVal) => {
+        const maxDiff = 255 - minVal;
+        return percentScreenScrolled > 1
+            ? minVal
+            : 255 - maxDiff * percentScreenScrolled;
+    });
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function parsePixels(str) {

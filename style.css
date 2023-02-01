@@ -1,11 +1,11 @@
-@import "https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap";
+@import "https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@400&f[]=zodiak@700&display=swap";
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-family: "Switzer", Arial, sans-serif;
+  font-family: "Jakarta Sans", Arial, sans-serif;
   margin: 0;
 }
 body h1,
@@ -14,12 +14,13 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  font-family: "Gambarino", "Times New Roman", Times, serif;
+  font-family: "Zodiak", "Times New Roman", Times, serif;
 }
 body #home {
   height: 100%;
+  background-attachment: local;
   background-color: #b3d0e2;
-  background-image: url("assets/sf-skyline.jpg");
+  background-image: url("assets/sf-skyline.png"), linear-gradient(to bottom, #b3d0e2 calc(100vh + 150px), #fff calc(100vh + 150px));
   background-position: top -150px right;
   background-repeat: no-repeat;
   overflow: scroll;
@@ -37,11 +38,25 @@ body #home footer .content {
   width: 65vw;
   box-sizing: border-box;
 }
-body #home header,
-body #home footer {
-  background-image: linear-gradient(to bottom, transparent, #cfd9df, #fff, #cfd9df, #9db3bf);
+body #home main h1,
+body #home main h2,
+body #home main h3,
+body #home main h4,
+body #home main h5,
+body #home main h6,
+body #home footer h1,
+body #home footer h2,
+body #home footer h3,
+body #home footer h4,
+body #home footer h5,
+body #home footer h6 {
+  color: #7d9eb0;
 }
 body #home header {
+  background-image: linear-gradient(to bottom, transparent, #cfd9df, #fff, #cfd9df, transparent), url("assets/water.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
   justify-content: flex-end;
   position: relative;
 }
@@ -110,7 +125,7 @@ body #home main .content {
   padding: 80px 5vw;
 }
 body #home footer {
-  background-color: rgb(100, 100, 100);
+  background-image: linear-gradient(to bottom, #9db3bf, #cfd9df, #fff, #cfd9df, #9db3bf);
   position: relative;
   z-index: 2;
 }
@@ -133,7 +148,9 @@ body #scroll-graphic {
   width: 25vw;
   background-image: url("assets/astkhik-levantian.jpg");
   background-size: cover;
+  border: 10px solid #fff;
   border-radius: 50%;
+  box-sizing: border-box;
   margin: 0 10vw;
   position: fixed;
   z-index: 1;

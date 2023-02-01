@@ -24,6 +24,7 @@
                     </div>
                 </div>
             </header>
+
             <nav>
                 <button onclick="scrollToHome()">home</button>
                 <button id="nav-about" onclick="scrollToAbout()">about</button>
@@ -31,6 +32,7 @@
                     contact
                 </button>
             </nav>
+
             <main>
                 <div class="content">
                     <h3>About</h3>
@@ -46,6 +48,7 @@
                     </ul>
                 </div>
             </main>
+
             <footer>
                 <div class="content">
                     <h3>Contact Me</h3>
@@ -56,30 +59,11 @@
                     </form>
                 </div>
             </footer>
+
+            <div id="scroll-graphic"></div>
         </div>
 
-        <div id="scroll-graphic"></div>
-
-        <script src="script.js"></script>
-
-        <script>
-            function scrollToHome() {
-                scrollToHelper("header");
-            }
-
-            function scrollToAbout() {
-                scrollToHelper("main");
-            }
-
-            function scrollToContact() {
-                scrollToHelper("footer");
-            }
-
-            function scrollToHelper(tag) {
-                document
-                    .querySelector(tag)
-                    .scrollIntoView({ behavior: "smooth" });
-            }
-        </script>
+        <script src="scripts/scrolling.js"></script>
+        <script src="scripts/handlers.js"></script>
     </body>
 </html>
