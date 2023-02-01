@@ -18,6 +18,10 @@ body h6 {
 }
 body #home {
   height: 100%;
+  background-color: #b3d0e2;
+  background-image: url("assets/sf-skyline.jpg");
+  background-position: top -150px right;
+  background-repeat: no-repeat;
   overflow: scroll;
 }
 body #home header,
@@ -35,7 +39,7 @@ body #home footer .content {
 }
 body #home header,
 body #home footer {
-  background-image: linear-gradient(to top, #9db3bf, #cfd9df, #fff, #cfd9df, #9db3bf);
+  background-image: linear-gradient(to bottom, transparent, #cfd9df, #fff, #cfd9df, #9db3bf);
 }
 body #home header {
   justify-content: flex-end;
@@ -127,7 +131,7 @@ body #home footer .content form {
 body #scroll-graphic {
   height: 25vw;
   width: 25vw;
-  background-image: url("https://media.licdn.com/dms/image/C5603AQF6OaqGBiD9HA/profile-displayphoto-shrink_200_200/0/1568780258039?e=2147483647&v=beta&t=iSAH7wvT9ncA9WeCgRcAI4PJklpD-3KRUzfJR9TpGKk");
+  background-image: url("assets/astkhik-levantian.jpg");
   background-size: cover;
   border-radius: 50%;
   margin: 0 10vw;

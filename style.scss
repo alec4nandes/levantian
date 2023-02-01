@@ -23,6 +23,10 @@ body {
 
     #home {
         height: 100%;
+        background-color: #b3d0e2;
+        background-image: url("assets/sf-skyline.jpg");
+        background-position: top -150px right;
+        background-repeat: no-repeat;
         overflow: scroll;
 
         header,
@@ -41,8 +45,9 @@ body {
         header,
         footer {
             background-image: linear-gradient(
-                to top,
-                #9db3bf,
+                to bottom,
+                transparent,
+                // #9db3bf,
                 #cfd9df,
                 #fff,
                 #cfd9df,
@@ -155,7 +160,7 @@ body {
         // max-height: 300px;
         // max-width: 300px;
         width: $sg-dim;
-        background-image: url("https://media.licdn.com/dms/image/C5603AQF6OaqGBiD9HA/profile-displayphoto-shrink_200_200/0/1568780258039?e=2147483647&v=beta&t=iSAH7wvT9ncA9WeCgRcAI4PJklpD-3KRUzfJR9TpGKk");
+        background-image: url("assets/astkhik-levantian.jpg");
         background-size: cover;
         border-radius: 50%;
         margin: 0 $sg-margin;
