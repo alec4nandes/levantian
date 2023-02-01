@@ -1,7 +1,7 @@
 initialize();
 
 function initialize() {
-    const container = document.querySelector("#snap-container");
+    const container = document.querySelector("#home");
     moveScrollGraphic(container);
     container.onscroll = (e) => moveScrollGraphic(e.target);
     let timeout;
@@ -30,17 +30,17 @@ function moveScrollGraphic(container) {
         verticalCenter = `${(screenHeight - graphicHeight) / 2}px`;
 
     if (screenWidth > 700) {
-        const slowLeftWide = percentScreenScrolled / 1.75;
+        const slowLeftWide = percentScreenScrolled / 1.5;
         scrollGraphic.style.left = `${
             slowLeftWide < maxWidthPercent ? slowLeftWide : maxWidthPercent
         }%`;
         scrollGraphic.style.top = verticalCenter;
     } else {
-        const navHeight = 80,
+        const navHeight = 120,
             maxLeftPercent = (100 - (graphicWidth / screenWidth) * 100) / 2,
             headerBreakpoint = screenHeight / 2 + graphicWidth / 2 + navHeight,
             isPastHeader = Math.ceil(scrollTop) >= headerBreakpoint,
-            slowLeftNarrow = percentScreenScrolled / 2.75;
+            slowLeftNarrow = percentScreenScrolled / 2.75 + 2; // plus 2% padding
         scrollGraphic.style.left = `${
             slowLeftNarrow < maxLeftPercent ? slowLeftNarrow : maxLeftPercent
         }%`;
@@ -61,7 +61,7 @@ function displayNav(scrollTop, screenHeight) {
     const nav = document.querySelector("nav"),
         navButtons = nav.querySelectorAll("button");
     nav.style.visibility =
-        Math.ceil(scrollTop) >= screenHeight ? "visible" : "hidden";
+        Math.ceil(scrollTop) >= screenHeight * 0.85 ? "visible" : "hidden";
     navButtons.forEach((button) => button.classList.remove("open"));
     isPastSection("footer", scrollTop)
         ? addOpenClassToButton("#nav-contact")

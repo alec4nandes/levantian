@@ -1,15 +1,27 @@
+@import "https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap";
+
 html,
 body {
     height: 100%;
 }
 
 body {
+    $sg-dim: 25vw;
+    $sg-margin: 10vw;
+
+    font-family: "Switzer", Arial, sans-serif;
     margin: 0;
 
-    $sg-dim: 30vw;
-    $sg-margin: 7vw;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Gambarino", "Times New Roman", Times, serif;
+    }
 
-    #snap-container {
+    #home {
         height: 100%;
         overflow: scroll;
 
@@ -23,53 +35,133 @@ body {
             .content {
                 width: calc(100vw - ($sg-dim + $sg-margin));
                 box-sizing: border-box;
-                text-align: center;
             }
         }
 
+        header,
+        footer {
+            background-image: linear-gradient(
+                to top,
+                #9db3bf,
+                #cfd9df,
+                #fff,
+                #cfd9df,
+                #9db3bf
+            );
+        }
+
         header {
-            background-color: transparent;
             justify-content: flex-end;
+            position: relative;
+
+            .content {
+                color: #516570;
+                padding: 0 5vw;
+
+                h1 {
+                    line-height: 2.5rem;
+                    margin-top: 0;
+                }
+
+                h2 {
+                    color: #7d9eb0;
+                }
+
+                #jump-buttons {
+                    display: flex;
+                    gap: 20px;
+
+                    button {
+                        appearance: none;
+                        background: none;
+                        border: none;
+                        color: #7d9eb0;
+                        font-family: "Switzer", Arial, sans-serif;
+                        font-size: 1rem;
+                        padding: 0;
+                        text-decoration: underline;
+
+                        &:hover {
+                            color: #516570;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
 
         nav {
             min-height: 40px;
-            background-color: navy;
+            background-color: #cfd9df;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
             position: sticky;
             top: 0;
+            z-index: 3;
 
-            button.open {
-                background-color: yellow;
+            button {
+                appearance: none;
+                background: none;
+                border: none;
+                color: #516570;
+                font-family: "Switzer", Arial, sans-serif;
+                font-size: 1rem;
+
+                &:hover,
+                &.open {
+                    color: #7d9eb0;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
 
         main {
-            background-color: rgba(200, 200, 200, 0.5);
             justify-content: flex-start;
 
             .content {
-                padding: 80px 15px;
+                padding: 80px 5vw;
             }
         }
 
         footer {
+            // align-items: flex-start;
             background-color: rgb(100, 100, 100);
+            position: relative;
+            z-index: 2;
+
+            .content {
+                margin: 80px auto;
+                text-align: center;
+
+                form {
+                    max-width: 600px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin: auto;
+                    padding: 0 5vw;
+                }
+            }
         }
     }
 
     #scroll-graphic {
         height: $sg-dim;
+        // max-height: 300px;
+        // max-width: 300px;
         width: $sg-dim;
-        background-color: maroon;
+        background-image: url("https://media.licdn.com/dms/image/C5603AQF6OaqGBiD9HA/profile-displayphoto-shrink_200_200/0/1568780258039?e=2147483647&v=beta&t=iSAH7wvT9ncA9WeCgRcAI4PJklpD-3KRUzfJR9TpGKk");
+        background-size: cover;
         border-radius: 50%;
         margin: 0 $sg-margin;
         position: fixed;
         // transition: 1s;
-        z-index: -1;
+        z-index: 1;
     }
 }
 
@@ -78,17 +170,33 @@ body {
     $margin: 7vw;
 
     .content {
-        padding-top: calc($dim + $margin + 40px) !important;
         width: 100% !important;
     }
 
     header .content {
-        padding-top: 0 !important;
         width: calc(100% - $dim) !important;
+        padding-top: 0 !important;
+    }
+
+    main {
+        align-items: flex-start !important;
+
+        .content {
+            padding-top: calc($dim + $margin + 60px) !important;
+            text-align: center !important;
+
+            ul {
+                width: fit-content;
+                margin: auto;
+                padding: 0;
+                text-align: left;
+            }
+        }
     }
 
     #scroll-graphic {
         height: $dim !important;
         width: $dim !important;
+        margin: 0 !important;
     }
 }
