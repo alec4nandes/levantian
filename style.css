@@ -5,8 +5,34 @@ body {
 }
 
 body {
-  font-family: "Jakarta Sans", Arial, sans-serif;
   margin: 0;
+}
+body,
+body button,
+body input,
+body textarea {
+  font-size: 1rem;
+  font-family: "Jakarta Sans", Arial, sans-serif;
+}
+body input,
+body textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: 0;
+  color: cadetblue;
+}
+body input {
+  border-bottom: 1px solid cadetblue;
+}
+body textarea {
+  height: 300px;
+  border: 1px solid cadetblue;
+}
+body,
+body header a {
+  color: #516570;
 }
 body h1,
 body h2,
@@ -38,12 +64,14 @@ body #home footer .content {
   width: 65vw;
   box-sizing: border-box;
 }
+body #home main a,
 body #home main h1,
 body #home main h2,
 body #home main h3,
 body #home main h4,
 body #home main h5,
 body #home main h6,
+body #home footer a,
 body #home footer h1,
 body #home footer h2,
 body #home footer h3,
@@ -51,6 +79,35 @@ body #home footer h4,
 body #home footer h5,
 body #home footer h6 {
   color: #7d9eb0;
+}
+body #home main a,
+body #home footer a {
+  font-weight: bold;
+}
+body #home main a:hover,
+body #home footer a:hover {
+  color: #a8bcc7;
+}
+body #home header #jump-buttons button,
+body #home footer form button[type=submit] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #7d9eb0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Switzer", Arial, sans-serif;
+  padding: 4px 8px 5px;
+  transition: background-color 1s;
+}
+body #home header #jump-buttons button:hover,
+body #home footer form button[type=submit]:hover {
+  background-color: #516570;
+  cursor: pointer;
 }
 body #home header {
   background-image: linear-gradient(to bottom, transparent, #cfd9df, #fff, #cfd9df, transparent), url("assets/water.png");
@@ -61,10 +118,21 @@ body #home header {
   position: relative;
 }
 body #home header .content {
-  color: #516570;
   padding: 0 5vw;
 }
+body #home header .content a {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-decoration: none;
+}
+body #home header .content a:hover {
+  opacity: 0.5;
+}
 body #home header .content h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(215, 230, 240, 0.25);
   line-height: 2.5rem;
   margin-top: 0;
 }
@@ -73,23 +141,13 @@ body #home header .content h2 {
 }
 body #home header .content #jump-buttons {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 20px;
+  margin-top: 30px;
 }
 body #home header .content #jump-buttons button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: none;
-  border: none;
-  color: #7d9eb0;
-  font-family: "Switzer", Arial, sans-serif;
-  font-size: 1rem;
-  padding: 0;
-  text-decoration: underline;
-}
-body #home header .content #jump-buttons button:hover {
-  color: #516570;
-  cursor: pointer;
+  font-size: 1.2rem;
 }
 body #home nav {
   min-height: 40px;
@@ -110,8 +168,6 @@ body #home nav button {
   background: none;
   border: none;
   color: #516570;
-  font-family: "Switzer", Arial, sans-serif;
-  font-size: 1rem;
 }
 body #home nav button:hover, body #home nav button.open {
   color: #7d9eb0;
@@ -125,23 +181,40 @@ body #home main .content {
   padding: 80px 5vw;
 }
 body #home footer {
-  background-image: linear-gradient(to bottom, #9db3bf, #cfd9df, #fff, #cfd9df, #9db3bf);
+  background-image: linear-gradient(to bottom, #cfd9df, #fff, #cfd9df);
   position: relative;
   z-index: 2;
 }
 body #home footer .content {
-  margin: 80px auto;
+  margin: 0 auto;
+  padding: 80px 5vw;
   text-align: center;
 }
 body #home footer .content form {
   max-width: 600px;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #7d9eb0;
+  border-radius: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  margin: 40px auto 0;
+  padding: 15px;
+}
+body #home footer .content form textarea::-moz-placeholder {
+  opacity: 0.5;
+}
+body #home footer .content form textarea:-ms-input-placeholder {
+  opacity: 0.5;
+}
+body #home footer .content form textarea::placeholder {
+  opacity: 0.5;
+}
+body #home footer .content form button[type=submit] {
+  font-size: 1rem;
   margin: auto;
-  padding: 0 5vw;
 }
 body #scroll-graphic {
   height: 25vw;

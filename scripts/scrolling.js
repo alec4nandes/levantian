@@ -55,19 +55,19 @@ function moveScrollGraphic(container) {
     displayNav(scrollTop, screenHeight);
 }
 
-function getBorderRGB(scrollTop, screenHeight) {
-    const percentScreenScrolled = scrollTop / screenHeight;
-    const [r, g, b] = [157, 179, 191].map((minVal) => {
-        const maxDiff = 255 - minVal;
-        return percentScreenScrolled > 1
-            ? minVal
-            : 255 - maxDiff * percentScreenScrolled;
-    });
-    return `rgb(${r}, ${g}, ${b})`;
-}
-
 function parsePixels(str) {
     return +str.replace("px", "");
+}
+
+function getBorderRGB(scrollTop, screenHeight) {
+    const percentScreenScrolled = scrollTop / screenHeight,
+        [r, g, b] = [157, 179, 191].map((minVal) => {
+            const maxDiff = 255 - minVal;
+            return percentScreenScrolled > 1
+                ? minVal
+                : 255 - maxDiff * percentScreenScrolled;
+        });
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function displayNav(scrollTop, screenHeight) {

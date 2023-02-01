@@ -9,8 +9,37 @@ body {
     $sg-dim: 25vw;
     $sg-margin: 10vw;
 
-    font-family: "Jakarta Sans", Arial, sans-serif;
+    &,
+    button,
+    input,
+    textarea {
+        font-size: 1rem;
+        font-family: "Jakarta Sans", Arial, sans-serif;
+    }
+
+    input,
+    textarea {
+        appearance: none;
+        background: none;
+        border: 0;
+        color: cadetblue;
+    }
+
+    input {
+        border-bottom: 1px solid cadetblue;
+    }
+
+    textarea {
+        height: 300px;
+        border: 1px solid cadetblue;
+    }
+
     margin: 0;
+
+    &,
+    header a {
+        color: #516570;
+    }
 
     h1,
     h2,
@@ -50,6 +79,7 @@ body {
 
         main,
         footer {
+            a,
             h1,
             h2,
             h3,
@@ -57,6 +87,32 @@ body {
             h5,
             h6 {
                 color: #7d9eb0;
+            }
+
+            a {
+                font-weight: bold;
+
+                &:hover {
+                    color: #a8bcc7;
+                }
+            }
+        }
+
+        header #jump-buttons button,
+        footer form button[type="submit"] {
+            width: fit-content;
+            appearance: none;
+            background-color: #7d9eb0;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-family: "Switzer", Arial, sans-serif;
+            padding: 4px 8px 5px;
+            transition: background-color 1s;
+
+            &:hover {
+                background-color: #516570;
+                cursor: pointer;
             }
         }
 
@@ -77,10 +133,21 @@ body {
             position: relative;
 
             .content {
-                color: #516570;
                 padding: 0 5vw;
 
+                a {
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;
+                    text-decoration: none;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+
                 h1 {
+                    width: fit-content;
+                    background-color: rgba(215, 230, 240, 0.25);
                     line-height: 2.5rem;
                     margin-top: 0;
                 }
@@ -91,22 +158,13 @@ body {
 
                 #jump-buttons {
                     display: flex;
-                    gap: 20px;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 5px 20px;
+                    margin-top: 30px;
 
                     button {
-                        appearance: none;
-                        background: none;
-                        border: none;
-                        color: #7d9eb0;
-                        font-family: "Switzer", Arial, sans-serif;
-                        font-size: 1rem;
-                        padding: 0;
-                        text-decoration: underline;
-
-                        &:hover {
-                            color: #516570;
-                            cursor: pointer;
-                        }
+                        font-size: 1.2rem;
                     }
                 }
             }
@@ -128,8 +186,6 @@ body {
                 background: none;
                 border: none;
                 color: #516570;
-                font-family: "Switzer", Arial, sans-serif;
-                font-size: 1rem;
 
                 &:hover,
                 &.open {
@@ -152,28 +208,43 @@ body {
             // align-items: flex-start;
             background-image: linear-gradient(
                 to bottom,
-                #9db3bf,
+                // #9db3bf,
                 #cfd9df,
                 #fff,
                 #cfd9df,
-                #9db3bf
+                // #9db3bf
             );
             position: relative;
             z-index: 2;
 
             .content {
-                margin: 80px auto;
+                margin: 0 auto;
+                padding: 80px 5vw;
                 text-align: center;
 
                 form {
                     max-width: 600px;
                     width: 100%;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: 1px solid #7d9eb0;
+                    border-radius: 10px;
                     box-sizing: border-box;
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
-                    margin: auto;
-                    padding: 0 5vw;
+                    gap: 15px;
+                    margin: 40px auto 0;
+                    padding: 15px;
+
+                    textarea {
+                        &::placeholder {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    button[type="submit"] {
+                        font-size: 1rem;
+                        margin: auto;
+                    }
                 }
             }
         }
