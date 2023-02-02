@@ -109,7 +109,7 @@ body #home footer form button[type=submit] {
   border-radius: 4px;
   color: #fff;
   font-family: "Switzer", Arial, sans-serif;
-  padding: 4px 8px 5px;
+  padding: 4px 12px 5px;
   transition: background-color 1s;
 }
 body #home header #jump-buttons button:hover,
@@ -140,6 +140,9 @@ body #home header .content p {
   gap: 8px 0;
 }
 body #home header .content p a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   align-items: center;
   gap: 5px;

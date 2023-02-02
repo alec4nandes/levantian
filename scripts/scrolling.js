@@ -38,7 +38,7 @@ function moveScrollGraphic(container) {
     fadeOut.style.opacity = decimalScrolled > 1 ? 0 : 1 - decimalScrolled;
 
     if (screenWidth > 700) {
-        const slowLeftWide = percentScreenScrolled / 1.5;
+        const slowLeftWide = percentScreenScrolled / 1.75;
         scrollGraphic.style.left = `${
             slowLeftWide < maxWidthPercent ? slowLeftWide : maxWidthPercent
         }%`;
