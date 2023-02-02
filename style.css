@@ -245,14 +245,21 @@ body #home footer .content form button[type=submit] {
 body #scroll-graphic {
   height: 25vw;
   width: 25vw;
-  background-image: url("assets/astkhik-levantian.jpg");
   background-size: cover;
   border: 10px solid #fff;
   border-radius: 50%;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
   margin: 0 10vw;
+  overflow: hidden;
   position: fixed;
   z-index: 1;
+}
+body #scroll-graphic img {
+  height: 100%;
+  width: auto;
+  position: absolute;
 }
 
 @media only screen and (max-width: 700px) {

@@ -283,15 +283,23 @@ body {
         // max-height: 400px;
         // max-width: 400px;
         width: $sg-dim;
-        background-image: url("assets/astkhik-levantian.jpg");
         background-size: cover;
         border: 10px solid #fff;
         border-radius: 50%;
         box-sizing: border-box;
+        display: flex;
+        justify-content: center;
         margin: 0 $sg-margin;
+        overflow: hidden;
         position: fixed;
         // transition: 1s;
         z-index: 1;
+
+        img {
+            height: 100%;
+            width: auto;
+            position: absolute;
+        }
     }
 }
 

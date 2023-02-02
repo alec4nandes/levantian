@@ -26,11 +26,16 @@ function moveScrollGraphic(container) {
         ),
         graphicWidth = parsePixels(width) + 2 * graphicMargin,
         maxWidthPercent = 100 - (graphicWidth / screenWidth) * 100,
-        percentScreenScrolled = (scrollTop / screenHeight) * 100,
+        decimalScrolled = scrollTop / screenHeight,
+        percentScreenScrolled = decimalScrolled * 100,
         verticalCenter = `${(screenHeight - graphicHeight) / 2}px`;
 
     // change border color
-    scrollGraphic.style.borderColor = getBorderRGB(scrollTop, screenHeight);
+    scrollGraphic.style.borderColor = getBorderRGB(decimalScrolled);
+
+    // fade out image on scroll
+    const fadeOut = scrollGraphic.querySelector("#fade-out-on-scroll");
+    fadeOut.style.opacity = decimalScrolled > 1 ? 0 : 1 - decimalScrolled;
 
     if (screenWidth > 700) {
         const slowLeftWide = percentScreenScrolled / 1.5;
@@ -59,14 +64,10 @@ function parsePixels(str) {
     return +str.replace("px", "");
 }
 
-function getBorderRGB(scrollTop, screenHeight) {
-    const percentScreenScrolled = scrollTop / screenHeight,
-        [r, g, b] = [157, 179, 191].map((minVal) => {
-            const maxDiff = 255 - minVal;
-            return percentScreenScrolled > 1
-                ? minVal
-                : 255 - maxDiff * percentScreenScrolled;
-        });
+function getBorderRGB(decimalScrolled) {
+    const [r, g, b] = [157, 179, 191].map((minVal) =>
+        decimalScrolled > 1 ? minVal : 255 - (255 - minVal) * decimalScrolled
+    );
     return `rgb(${r}, ${g}, ${b})`;
 }
 
