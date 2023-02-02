@@ -54,6 +54,11 @@ body #home {
   background-repeat: no-repeat;
   overflow: scroll;
 }
+body #home > nav,
+body #home #jump-buttons button,
+body #home footer .content form {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
 body #home header,
 body #home main,
 body #home footer {
@@ -216,17 +221,20 @@ body #home footer .content {
   padding: 80px 5vw;
   text-align: center;
 }
+body #home footer .content p,
 body #home footer .content form {
   max-width: 600px;
+  margin: auto;
+}
+body #home footer .content form {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid #7d9eb0;
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 40px auto 0;
+  margin-top: 40px;
   padding: 15px;
 }
 body #home footer .content form textarea::-moz-placeholder {
