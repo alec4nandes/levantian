@@ -14,6 +14,10 @@ body textarea {
   font-size: 1rem;
   font-family: "Jakarta Sans", Arial, sans-serif;
 }
+body a,
+body button {
+  transition: background-color 0.5s, color 0.5s, opacity 0.5s;
+}
 body input,
 body textarea {
   -webkit-appearance: none;
@@ -110,7 +114,6 @@ body #home footer form button[type=submit] {
   color: #fff;
   font-family: "Switzer", Arial, sans-serif;
   padding: 4px 12px 5px;
-  transition: background-color 1s;
 }
 body #home header #jump-buttons button:hover,
 body #home footer form button[type=submit]:hover {
