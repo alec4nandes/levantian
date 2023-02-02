@@ -48,7 +48,7 @@ function moveScrollGraphic(container) {
             maxLeftPercent = (100 - (graphicWidth / screenWidth) * 100) / 2,
             headerBreakpoint = screenHeight / 2 + graphicWidth / 2 + navHeight,
             isPastHeader = Math.ceil(scrollTop) >= headerBreakpoint,
-            slowLeftNarrow = percentScreenScrolled / 2.75;
+            slowLeftNarrow = percentScreenScrolled / 2.5;
         scrollGraphic.style.left = `${
             slowLeftNarrow < maxLeftPercent ? slowLeftNarrow : maxLeftPercent
         }%`;
