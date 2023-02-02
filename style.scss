@@ -137,27 +137,55 @@ body {
             position: relative;
 
             .content {
+                min-width: 240px;
                 padding: 0 5vw;
+                z-index: 9;
 
-                a {
-                    font-size: 1.2rem;
-                    line-height: 1.8rem;
-                    text-decoration: none;
+                h1,
+                p {
+                    margin: 0;
+                }
 
-                    &:hover {
-                        opacity: 0.5;
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px 0;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        font-size: 1.2rem;
+                        line-height: 1.8rem;
+                        text-decoration: none;
+
+                        &:hover {
+                            opacity: 0.5;
+                        }
+
+                        img {
+                            height: 30px;
+                            width: auto;
+                            opacity: 0.4;
+                        }
                     }
+                }
+
+                p a,
+                #jump-buttons button {
+                    font-size: clamp(1.1rem, 3vw, 1.4rem);
                 }
 
                 h1 {
                     width: fit-content;
-                    background-color: rgba(215, 230, 240, 0.25);
-                    line-height: 2.5rem;
-                    margin-top: 0;
+                    font-size: clamp(2rem, 5vw, 4rem);
+                    line-height: 2.2rem;
                 }
 
                 h2 {
+                    width: fit-content;
                     color: #7d9eb0;
+                    font-size: clamp(1.3rem, 3.5vw, 2rem);
                 }
 
                 #jump-buttons {
@@ -166,10 +194,6 @@ body {
                     flex-wrap: wrap;
                     gap: 5px 20px;
                     margin-top: 30px;
-
-                    button {
-                        font-size: 1.2rem;
-                    }
                 }
             }
         }
@@ -256,8 +280,8 @@ body {
 
     #scroll-graphic {
         height: $sg-dim;
-        // max-height: 300px;
-        // max-width: 300px;
+        // max-height: 400px;
+        // max-width: 400px;
         width: $sg-dim;
         background-image: url("assets/astkhik-levantian.jpg");
         background-size: cover;
@@ -304,5 +328,13 @@ body {
         height: $dim !important;
         width: $dim !important;
         margin: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    header .content {
+        background-color: rgba(253, 253, 254, 0.65);
+        border-radius: 5vw 0 0 5vw;
+        padding: 5vw !important;
     }
 }

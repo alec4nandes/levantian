@@ -121,26 +121,52 @@ body #home header {
   position: relative;
 }
 body #home header .content {
+  min-width: 240px;
   padding: 0 5vw;
+  z-index: 9;
 }
-body #home header .content a {
+body #home header .content h1,
+body #home header .content p {
+  margin: 0;
+}
+body #home header .content p {
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+}
+body #home header .content p a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 1.2rem;
   line-height: 1.8rem;
   text-decoration: none;
 }
-body #home header .content a:hover {
+body #home header .content p a:hover {
   opacity: 0.5;
+}
+body #home header .content p a img {
+  height: 30px;
+  width: auto;
+  opacity: 0.4;
+}
+body #home header .content p a,
+body #home header .content #jump-buttons button {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
 }
 body #home header .content h1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgba(215, 230, 240, 0.25);
-  line-height: 2.5rem;
-  margin-top: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 2.2rem;
 }
 body #home header .content h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #7d9eb0;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
 }
 body #home header .content #jump-buttons {
   display: flex;
@@ -148,9 +174,6 @@ body #home header .content #jump-buttons {
   flex-wrap: wrap;
   gap: 5px 20px;
   margin-top: 30px;
-}
-body #home header .content #jump-buttons button {
-  font-size: 1.2rem;
 }
 body #home nav {
   min-height: 40px;
@@ -259,5 +282,12 @@ body #scroll-graphic {
     height: 40vw !important;
     width: 40vw !important;
     margin: 0 !important;
+  }
+}
+@media only screen and (max-width: 350px) {
+  header .content {
+    background-color: rgba(253, 253, 254, 0.65);
+    border-radius: 5vw 0 0 5vw;
+    padding: 5vw !important;
   }
 }/*# sourceMappingURL=style.css.map */
