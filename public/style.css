@@ -102,7 +102,6 @@ body #home footer a:hover {
 }
 body #home header #jump-buttons button,
 body #home footer form button[type=submit] {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   -webkit-appearance: none;
@@ -143,7 +142,6 @@ body #home header .content p {
   gap: 8px 0;
 }
 body #home header .content p a {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
@@ -166,14 +164,12 @@ body #home header .content #jump-buttons button {
   font-size: clamp(1.1rem, 3vw, 1.4rem);
 }
 body #home header .content h1 {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 2.2rem;
 }
 body #home header .content h2 {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: #7d9eb0;
@@ -193,7 +189,6 @@ body #home nav {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 3;
@@ -246,9 +241,6 @@ body #home footer .content form {
 body #home footer .content form textarea::-moz-placeholder {
   opacity: 0.5;
 }
-body #home footer .content form textarea:-ms-input-placeholder {
-  opacity: 0.5;
-}
 body #home footer .content form textarea::placeholder {
   opacity: 0.5;
 }
@@ -292,7 +284,6 @@ body #scroll-graphic img {
     text-align: center !important;
   }
   main .content ul {
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: auto;
